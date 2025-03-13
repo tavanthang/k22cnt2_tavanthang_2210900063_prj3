@@ -1,32 +1,91 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Danh sách Admin</title>
+    <meta charset="UTF-8">
+    <title>Trang chủ Admin - Quản lý Cửa hàng Thời trang Trẻ em</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #555;
+        }
+        .sidebar button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .sidebar button:hover {
+            background-color: #005bb5;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #222;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h2>Danh sách Admin</h2>
-
-    <p><a href="add">Thêm Admin mới</a> | <a href="logout">Đăng xuất</a></p>
-
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Tài khoản</th>
-            <th>Trạng thái</th>
-            <th>Hành động</th>
-        </tr>
-        <c:forEach var="admin" items="${list}">
-            <tr>
-                <td>${admin.id}</td>
-                <td>${admin.tvt_TaiKhoan}</td>
-                <td>${admin.tvt_TrangThai ? "Hoạt động" : "Khóa"}</td>
-                <td>
-                    <a href="edit/${admin.id}">Sửa</a> | 
-                    <a href="delete/${admin.id}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Xóa</a>
-                </td>
-            </tr>
-        </c:forEach>
-    </table>
+    <div class="header">Trang Quản trị - Cửa hàng Thời trang Trẻ em</div>
+    <div class="container">
+        <div class="sidebar">
+            <a href="listsp">Danh sách sản phẩm</a>
+            <a href="add">Thêm sản phẩm</a>
+            <a href="orders">Quản lý đơn hàng</a>
+            <a href="user">Quản lý người dùng</a>
+            <a href="/SpringMVCPagination/">Đăng xuất</a>
+        </div>
+        <div class="content">
+            <h2>Chào mừng Admin!</h2>
+            <p>Chọn một chức năng từ menu để bắt đầu quản lý cửa hàng.</p>
+        </div>
+    </div>
+    <div class="footer">&copy; 2024 Quản trị Cửa hàng Thời trang Trẻ em</div>
 </body>
 </html>

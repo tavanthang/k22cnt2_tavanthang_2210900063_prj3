@@ -23,11 +23,14 @@
         <property name="password" value="thang2004#"></property>
     </bean>
 
-    <!-- Khai báo JdbcTemplate -->
+    <!-- Khai báo JdbcTemplate duy nhất -->
     <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="db"></property>
     </bean>
-
+    
+    <!-- Alias cho bean jt thành jdbcTemplate để tránh xung đột khi autowiring theo kiểu --> 
+    <alias name="jt" alias="jdbcTemplate"/>
+    
     <!-- Bean cho Tvt_sanphamdao -->
     <bean id="Tvt_sanphamdao" class="com.springmvc.dao.Tvt_sanphamdao">
         <property name="template" ref="jt"></property>
@@ -37,5 +40,10 @@
     <bean id="quantridao" class="com.springmvc.dao.Tvt_quantridao">
         <property name="template" ref="jt"></property>
     </bean>
-   
+    
+    <!-- Bean cho Tvt_khachhangdao -->
+    <bean id="khachhangdao" class="com.springmvc.dao.Tvt_khachhangdao">
+        <property name="template" ref="jt"></property>
+    </bean>
+    
 </beans>

@@ -1,30 +1,18 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Thêm Admin</title>
+    <meta charset="UTF-8">
+    <title>Thêm sản phẩm</title>
 </head>
 <body>
-    <h2>Thêm Admin</h2>
-
-    <form action="add" method="post">
-        <label for="tvt_TaiKhoan">Tài khoản:</label>
-        <input type="text" id="tvt_TaiKhoan" name="tvt_TaiKhoan" required>
-        <br>
-
-        <label for="tvt_MatKhau">Mật khẩu:</label>
-        <input type="password" id="tvt_MatKhau" name="tvt_MatKhau" required>
-        <br>
-
-        <label for="tvt_TrangThai">Trạng thái:</label>
-        <select id="tvt_TrangThai" name="tvt_TrangThai">
-            <option value="true">Hoạt động</option>
-            <option value="false">Khóa</option>
-        </select>
-        <br>
-
+    <h1>Thêm sản phẩm mới</h1>
+    <form action="admin/add" method="post">
+        <label for="name">Tên sản phẩm:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="price">Giá:</label>
+        <input type="number" id="price" name="price" required><br>
         <button type="submit">Thêm</button>
     </form>
-
-    <p><a href="list">Quay lại danh sách</a></p>
 </body>
 </html>

@@ -34,15 +34,8 @@
     </bean>
 
     <!-- Bean cho Tvt_quantridao -->
-     <bean id="khachhangdao" class="com.springmvc.dao.Tvt_khachhangdao">
-        <property name="template" ref="jt"></property>
-    </bean>
     <bean id="quantridao" class="com.springmvc.dao.Tvt_quantridao">
         <property name="template" ref="jt"></property>
     </bean>
-   <bean id="hoadondao" class="com.springmvc.dao.Tvt_hoadondao">
-    <property name="template" ref="jt"></property>
-</bean>
-
    
 </beans>
