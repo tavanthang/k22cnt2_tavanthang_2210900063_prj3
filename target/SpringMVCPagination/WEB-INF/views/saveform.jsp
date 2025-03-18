@@ -113,7 +113,7 @@
 <body>
     <div class="container">
         <h1>Thêm Sản Phẩm</h1>
-        <form:form method="post" action="/SpringMVCPagination/save">
+        <form:form method="post" action="save" modelAttribute="command">
             <table>
                 <tr>
                     <td>Tên sản phẩm:</td>

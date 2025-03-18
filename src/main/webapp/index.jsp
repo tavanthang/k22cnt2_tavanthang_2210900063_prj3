@@ -137,10 +137,7 @@
         <div class="sidebar">
             <input type="text" placeholder="Tìm kiếm...">
             <button>Tìm kiếm</button>
-            <a href="admin/list">Danh sách</a>
-            <a href="saveform">Thêm sản phẩm</a>
             <a href="viewform">Sản phẩm</a>
-            <a href="admin/list">Quản trị</a>
             <a href="giohang">Giỏ hàng</a>
             <a href="admin/login">Đăng nhập</a>
             <a href="admin/register">Đăng ký</a>

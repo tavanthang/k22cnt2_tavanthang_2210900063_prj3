@@ -126,6 +126,8 @@
                     </c:url>" class="buy-btn">
                         Mua
                     </a>
+                    <a href="sua/${product.id}" class="edit-btn">Edit</a>
+                    <a href="xoa/${product.id}" class="delete-btn">Delete</a>
                 </div>
             </c:forEach>
         </div>

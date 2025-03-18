@@ -73,32 +73,34 @@
         <h1>Thanh toán đơn hàng</h1>
 
         <h2>Thông tin khách hàng</h2>
-        <form method="post" action="/SpringMVCPagination/">
-            <label for="tvt_name">Tên khách hàng:</label>
-            <input type="text" id="tvt_name" name="tvt_name" required>
+       <form method="post" action="/SpringMVCPagination/views/khachhang/view">
+    <!-- Các trường input -->
+    <label for="tvt_name">Tên khách hàng:</label>
+    <input type="text" id="tvt_name" name="tvt_name" required>
 
-            <label for="tvt_sdt">Số điện thoại:</label>
-            <input type="text" id="tvt_sdt" name="tvt_sdt" required>
+    <label for="tvt_sdt">Số điện thoại:</label>
+    <input type="text" id="tvt_sdt" name="tvt_sdt" required>
 
-            <label for="tvt_email">Email:</label>
-            <input type="email" id="tvt_email" name="tvt_email" required>
+    <label for="tvt_email">Email:</label>
+    <input type="email" id="tvt_email" name="tvt_email" required>
 
-            <label for="tvt_diachi">Địa chỉ:</label>
-            <input type="text" id="tvt_diachi" name="tvt_diachi" required>
+    <label for="tvt_diachi">Địa chỉ:</label>
+    <input type="text" id="tvt_diachi" name="tvt_diachi" required>
 
-            <h2>Thông tin thanh toán</h2>
-            <label for="order_total">Tổng tiền:</label>
-            <input type="text" id="order_total" name="order_total" readonly>
+    <h2>Thông tin thanh toán</h2>
+    <label for="order_total">Tổng tiền:</label>
+    <input type="text" id="order_total" name="order_total" readonly>
 
-            <label for="payment_method">Phương thức thanh toán:</label>
-            <select id="payment_method" name="payment_method" required>
-                <option value="credit_card">Thẻ tín dụng</option>
-                <option value="bank_transfer">Chuyển khoản ngân hàng</option>
-                <option value="cash_on_delivery">Thanh toán khi nhận hàng</option>
-            </select>
+    <label for="payment_method">Phương thức thanh toán:</label>
+    <select id="payment_method" name="payment_method" required>
+        <option value="credit_card">Thẻ tín dụng</option>
+        <option value="bank_transfer">Chuyển khoản ngân hàng</option>
+        <option value="cash_on_delivery">Thanh toán khi nhận hàng</option>
+    </select>
 
-            <input type="submit" value="Thanh toán" class="btn-submit">
-        </form>
+    <input type="submit" value="Thanh toán" class="btn-submit">
+</form>
+
     </div>
 </body>
 </html>

@@ -23,20 +23,18 @@ public class TvtKhachHangController {
     public String listCustomers(Model model) {
         List<Tvt_khachhang> customers = khachhangdao.getAllCustomers();
         model.addAttribute("listKhachHang", customers);
-        model.addAttribute("customer", new Tvt_khachhang()); // Quan trọng để tránh lỗi BindingResult
+        model.addAttribute("customer", new Tvt_khachhang());
         return "khachhang/listkh";
     }
-
 
     @GetMapping("/add")
     public String showAddForm(Model model) {
         model.addAttribute("customer", new Tvt_khachhang());
-        return "khachhang/add"; // Đảm bảo file JSP tồn tại
+        return "khachhang/add";
     }
 
-
-
-    @PostMapping("/save")
+    // Phương thức POST xử lý khi submit form thanh toán
+    @PostMapping("/view")
     public String saveCustomer(@ModelAttribute Tvt_khachhang customer, RedirectAttributes redirectAttributes) {
         try {
             khachhangdao.saveCustomer(customer);
@@ -44,16 +42,21 @@ public class TvtKhachHangController {
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", "Lỗi khi đặt hàng!");
         }
-        return "redirect:/views/viewform"; // Chuyển về trang sản phẩm
+        // Redirect đến URL mapping GET /thanhtoan
+        return "redirect:/views/khachhang/thanhtoan";
+
     }
-    @GetMapping("/view")
-    public String showViewForm(Model model) {
-        model.addAttribute("message", "Đặt hàng thành công!");
-        return "khachhang/view"; // Tên file JSP (WEB-INF/views/viewform.jsp)
+
+    // Mapping hiển thị trang thông báo thanh toán thành công
+    @GetMapping("/thanhtoan")
+    public String showThanhtoan(Model model) {
+        // Nếu có flash attribute "message" thì view có thể hiển thị thông báo
+        return "khachhang/thanhtoan"; // JSP file: WEB-INF/views/khachhang/thanhtoan.jsp
     }
+
     @GetMapping("/delete/{id}")
     public String deleteCustomer(@PathVariable int id) {
-    	khachhangdao.deleteCustomer(id);
-        return "redirect:/khachhang/listkh";
+        khachhangdao.deleteCustomer(id);
+        return "redirect:/SpringMVCPagination/views/khachhang/listkh";
     }
 }

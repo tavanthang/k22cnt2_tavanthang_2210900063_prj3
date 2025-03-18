@@ -1,14 +1,13 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm Sản Phẩm</title>
-     <style>
+    <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(to right, #1e3c72, #2a5298);
@@ -16,7 +15,6 @@
             padding: 0;
             color: white;
         }
-
         .container {
             width: 90%;
             max-width: 1200px;
@@ -28,7 +26,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-
         h1 {
             color: #f1c40f;
             background: rgba(255, 255, 255, 0.2);
@@ -36,84 +33,31 @@
             border-radius: 10px;
             margin-bottom: 20px;
         }
-
-        .product-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+        table {
+            margin: 0 auto;
+        }
+        table td {
             padding: 10px;
         }
-
-        .product-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            width: 250px;
-            border-left: 5px solid #f1c40f;
-            transition: transform 0.3s;
-        }
-
-        .product-item:hover {
-            transform: scale(1.05);
-        }
-
-        .product-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .product-item a {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 15px;
-            border-radius: 5px;
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background: #27ae60;
             color: white;
-            text-decoration: none;
-        }
-
-        .buy-btn { background: #27ae60; }
-        .edit-btn { background: #f39c12; }
-        .delete-btn { background: #c0392b; }
-
-        .action-buttons {
-            margin-top: 20px;
-        }
-
-        .action-buttons a {
-            display: inline-block;
-            padding: 12px 20px;
-            margin: 10px;
-            font-size: 16px;
             font-weight: bold;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            background: #2980b9;
-            transition: 0.3s;
+            border-radius: 5px;
+            cursor: pointer;
         }
-
-        .action-buttons a:hover {
-            background: #3498db;
-        }
-
-        .footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-align: center;
-            border-radius: 0 0 10px 10px;
+        input[type="submit"]:hover {
+            background: #2ecc71;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Thêm Sản Phẩm</h1>
-        <form:form method="post" action="/SpringMVCPagination/save">
+        <!-- Sử dụng đường dẫn tuyệt đối với context path -->
+        <form:form method="post" action="${pageContext.request.contextPath}/save" modelAttribute="command">
             <table>
                 <tr>
                     <td>Tên sản phẩm:</td>

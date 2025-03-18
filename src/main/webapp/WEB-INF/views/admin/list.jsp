@@ -75,8 +75,8 @@
     <div class="header">Trang Quản trị - Cửa hàng Thời trang Trẻ em</div>
     <div class="container">
         <div class="sidebar">
-            <a href="listsp">Danh sách sản phẩm</a>
-            <a href="add">Thêm sản phẩm</a>
+          <a href="/SpringMVCPagination/viewform/">Sản phẩm</a>
+            <a href="/SpringMVCPagination/saveform/">Thêm sản phẩm</a>
             <a href="orders">Quản lý đơn hàng</a>
             <a href="user">Quản lý người dùng</a>
             <a href="/SpringMVCPagination/">Đăng xuất</a>

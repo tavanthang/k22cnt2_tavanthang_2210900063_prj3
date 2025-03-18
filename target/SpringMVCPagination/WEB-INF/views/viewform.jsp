@@ -132,8 +132,8 @@
             </c:forEach>
         </div>
         <div class="action-buttons">
-            <a href="saveform">Thêm Sản Phẩm</a>
             <a href="giohang">Giỏ Hàng</a>
+            <a href="/SpringMVCPagination/">Trang Chủ</a>
         </div>
         <br/>
         <input type="button" value="Back" onclick="window.history.back();" />

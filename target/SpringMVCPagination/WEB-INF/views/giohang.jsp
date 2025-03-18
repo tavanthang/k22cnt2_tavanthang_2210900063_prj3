@@ -113,6 +113,13 @@
         }
     </style>
 </head>
+<script>
+    function saveCartTotal() {
+        var totalAmount = ${totalAmount}; // Lấy tổng tiền từ server-side
+        localStorage.setItem("cartTotal", totalAmount);
+    }
+</script>
+
 <body>
     <div class="container">
         <h1>Giỏ Hàng</h1>
@@ -144,7 +151,8 @@
             </table>
 
             <h3><strong>Tổng cộng:</strong> ${totalAmount} VND</h3>
-            <a href="khachhang" class="checkout-btn">Thanh toán</a>
+            <a href="/SpringMVCPagination/views/khachhang/listkh" class="checkout-btn" onclick="saveCartTotal()">Thanh toán</a>
+
         </c:if>
 
         <c:if test="${empty cartItems}">
